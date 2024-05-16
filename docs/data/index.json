@@ -1,36 +1,36 @@
 {
-    "team": [
-        {
-            "name": "Harith Abeysinghe",
-            "email": "e19003@eng.pdn.ac.lk",
-            "eNumber": "E/19/003"
-        },
-        {
-            "name": "Lakshitha Edirisinghe",
-            "email": "e19095@eng.pdn.ac.lk",
-            "eNumber": "E/19/095"
-        },
-        {
-            "name": "Eshan Jayasundara",
-            "email": "e19163@eng.pdn.ac.lk",
-            "eNumber": "E/19/163"
-        },
-        {
-            "name": "Lahiru Manikdiwela",
-            "email": "e19236@eng.pdn.ac.lk",
-            "eNumber": "E/19/236"
-        },
-        {
-            "name": "Dasun Wijayawardana",
-            "email": "e19443@eng.pdn.ac.lk",
-            "eNumber": "E/19/443"
-        }
-    ],
-    "supervisors": [
-        {
-            "name": "Dr. Damayanthi Herath",
-            "email": "damayanthiherath@eng.pdn.ac.lk"
-        }
-    ],
-    "tags": ["Machine Learning"]
+  "team": [
+    {
+      "name": "Harith Abeysinghe",
+      "email": "e19003@eng.pdn.ac.lk",
+      "eNumber": "E/19/003"
+    },
+    {
+      "name": "Lakshitha Edirisinghe",
+      "email": "e19095@eng.pdn.ac.lk",
+      "eNumber": "E/19/095"
+    },
+    {
+      "name": "Eshan Jayasundara",
+      "email": "e19163@eng.pdn.ac.lk",
+      "eNumber": "E/19/163"
+    },
+    {
+      "name": "Lahiru Manikdiwela",
+      "email": "e19236@eng.pdn.ac.lk",
+      "eNumber": "E/19/236"
+    },
+    {
+      "name": "Dasun Wijayawardana",
+      "email": "e19443@eng.pdn.ac.lk",
+      "eNumber": "E/19/443"
+    }
+  ],
+  "supervisors": [
+    {
+      "name": "Dr. Damayanthi Herath",
+      "email": "damayanthiherath@eng.pdn.ac.lk"
+    }
+  ],
+  "tags": ["Machine Learning", "Classification"]
 }
