@@ -1,5 +1,5 @@
 ---
-# Hand Tremor Prediction System
+# Hand Tremor Based Biometric Recognition
 ---
 
 ## Introduction
