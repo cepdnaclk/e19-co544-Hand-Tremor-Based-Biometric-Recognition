@@ -3,8 +3,8 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: e19-co544-Hand-Tremor-Prediction-System
-title: Hand Tremor Prediction System
+repository-name: e19-co544-Hand-Tremor-Based-Biometric-Recognition
+title: Hand Tremor Based Biometric Recognition
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
