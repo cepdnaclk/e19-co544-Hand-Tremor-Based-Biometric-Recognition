@@ -33,9 +33,9 @@ class ModelTrainer:
         try:
             logging.info("Split training and test input data")
             X_train,y_train,X_test,y_test=(
-                train_array[['Mean_X', 'Std Dev_X', 'Energy_X', 'Entropy_X', 'Peaks_X']],
+                train_array[:,:-1],
                 train_array[:,-1],
-                test_array[['Mean_X', 'Std Dev_X', 'Energy_X', 'Entropy_X', 'Peaks_X']],
+                test_array[:,:-1],
                 test_array[:,-1]
             )
             models = {

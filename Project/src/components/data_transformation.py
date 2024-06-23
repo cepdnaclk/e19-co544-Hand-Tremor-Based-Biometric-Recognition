@@ -13,6 +13,7 @@ from src.logger import logging
 import os
 
 from src.utils import save_object
+from src.logger import logging
 
 @dataclass
 class DataTransformationConfig:
@@ -31,10 +32,8 @@ class DataTransformation:
 
 
         try:
-            numerical_columns = ['X','Y','Z','Mixed']
-            categorical_columns = [
-                "ClassLabel",
-            ]
+            numerical_columns = ["Mean_X","Std Dev_X","Energy_X",'Entropy_X','Peaks_X','Mean_Y','Std Dev_Y','Energy_Y','Entropy_Y','Peaks_Y','Mean_Z','Std Dev_Z','Energy_Z','Entropy_Z','Peaks_Z','Mean_Mixed','Std Dev_Mixed','Energy_Mixed','Entropy_Mixed','Peaks_Mixed']
+            categorical_columns = ["category"]
 
             num_pipeline= Pipeline(
                 steps=[
@@ -65,6 +64,7 @@ class DataTransformation:
 
 
             )
+            
 
             return preprocessor
         
@@ -83,7 +83,7 @@ class DataTransformation:
 
             preprocessing_obj=self.get_data_transformer_object()
 
-            target_column_name="ClassLabel"
+            target_column_name="category"
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
@@ -118,4 +118,5 @@ class DataTransformation:
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e:
+            logging.error(e)
             raise CustomException(e,sys)
