@@ -11,4 +11,6 @@ venv.bak/
 .installed.cfg
 *.egg
 
+*.log
+
 .python-version
