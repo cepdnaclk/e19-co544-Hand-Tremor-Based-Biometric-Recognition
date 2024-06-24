@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Hand-Tremor-Based-Biometric-Recognition </h1>
+    <h2 id="target-value">Predicted Category: Loading...</h2>
     <div id="graph1"></div>
     <div id="graph2"></div>
     <div id="graph3"></div>
@@ -23,6 +24,8 @@
                     const y2 = data.y2;
                     const y3 = data.y3;
                     const y4 = data.y4;
+                    const target = data.target;
+                    document.getElementById('target-value').textContent = 'Predicted Category: Person' + target;
 
                     // Update graph 1
                     Plotly.react('graph1', [{
