@@ -7,14 +7,18 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <h1>Hand-Tremor-Based-Biometric-Recognition </h1>
+    <h1>Hand-Tremor-Based-Biometric-Recognition</h1>
     <h2 id="target-value">Predicted Category: Loading...</h2>
+    <button id="toggle-button" onclick="toggleDataFetching()">Start Data Fetching</button>
     <div id="graph1"></div>
     <div id="graph2"></div>
     <div id="graph3"></div>
     <div id="graph4"></div>
 
     <script>
+        let intervalId;
+        let isFetching = false;
+
         function fetchDataAndUpdateGraphs() {
             fetch('/data')
                 .then(response => response.json())
@@ -25,7 +29,7 @@
                     const y3 = data.y3;
                     const y4 = data.y4;
                     const target = data.target;
-                    document.getElementById('target-value').textContent = 'Predicted Category: Person' + target;
+                    document.getElementById('target-value').textContent = 'Predicted Category: Person ' + target;
 
                     // Update graph 1
                     Plotly.react('graph1', [{
@@ -36,10 +40,10 @@
                     }], {
                         title: 'X Sensor',
                         font: {
-                                size: 24,
-                                family: 'Times New Roman',
-                                color: 'red'
-                            }
+                            size: 24,
+                            family: 'Times New Roman',
+                            color: 'red'
+                        }
                     });
 
                     // Update graph 2
@@ -51,10 +55,10 @@
                     }], {
                         title: 'Y Sensor',
                         font: {
-                                size: 24,
-                                family: 'Times New Roman',
-                                color: 'red'
-                            }
+                            size: 24,
+                            family: 'Times New Roman',
+                            color: 'red'
+                        }
                     });
 
                     // Update graph 3
@@ -66,10 +70,10 @@
                     }], {
                         title: 'Z Sensor',
                         font: {
-                                size: 24,
-                                family: 'Times New Roman',
-                                color: 'red'
-                            }
+                            size: 24,
+                            family: 'Times New Roman',
+                            color: 'red'
+                        }
                     });
 
                     // Update graph 4
@@ -81,19 +85,37 @@
                     }], {
                         title: 'Mixed Sensor',
                         font: {
-                                size: 24,
-                                family: 'Times New Roman',
-                                color: 'red'
-                            }
+                            size: 24,
+                            family: 'Times New Roman',
+                            color: 'red'
+                        }
                     });
                 });
         }
 
+        function startFetchingData() {
+            intervalId = setInterval(fetchDataAndUpdateGraphs, 1000);
+        }
+
+        function stopFetchingData() {
+            clearInterval(intervalId);
+        }
+
+        function toggleDataFetching() {
+            const button = document.getElementById('toggle-button');
+            if (isFetching) {
+                stopFetchingData();
+                button.textContent = 'Start Data Fetching';
+            } else {
+                fetchDataAndUpdateGraphs(); // Fetch data once immediately
+                startFetchingData();
+                button.textContent = 'Stop Data Fetching';
+            }
+            isFetching = !isFetching;
+        }
+
         // Initial plot
         fetchDataAndUpdateGraphs();
-
-        // Update graphs every second
-        setInterval(fetchDataAndUpdateGraphs, 1000);
     </script>
 </body>
 </html>

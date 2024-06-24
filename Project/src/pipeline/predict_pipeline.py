@@ -6,8 +6,6 @@ from src.utils import load_object
 from src.logger import logging
 
 
-
-
 def predict(features):
     try:
         model_path=os.path.join("artifacts","model.pkl")
