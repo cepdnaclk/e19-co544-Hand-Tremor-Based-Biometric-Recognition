@@ -10,7 +10,7 @@ def index():
 @app.route('/data')
 def data():
     # Generate random data
-    x = np.linspace(0, 10, 100)
+    x = np.linspace(0, 100, 100)
     y1 = np.random.rand(100).tolist()
     y2 = np.random.rand(100).tolist()
     y3 = np.random.rand(100).tolist()
