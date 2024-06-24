@@ -7,7 +7,8 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <h1>Random Data Line Graphs</h1>
+    <h1>Hand-Tremor-Based-Biometric-Recognition </h1>
+    <h2 id="target-value">Predicted Category: Loading...</h2>
     <div id="graph1"></div>
     <div id="graph2"></div>
     <div id="graph3"></div>
@@ -23,6 +24,8 @@
                     const y2 = data.y2;
                     const y3 = data.y3;
                     const y4 = data.y4;
+                    const target = data.target;
+                    document.getElementById('target-value').textContent = 'Predicted Category: Person' + target;
 
                     // Update graph 1
                     Plotly.react('graph1', [{
@@ -30,7 +33,14 @@
                         y: y1,
                         mode: 'lines',
                         name: 'X Data'
-                    }]);
+                    }], {
+                        title: 'X Sensor',
+                        font: {
+                                size: 24,
+                                family: 'Times New Roman',
+                                color: 'red'
+                            }
+                    });
 
                     // Update graph 2
                     Plotly.react('graph2', [{
@@ -38,7 +48,14 @@
                         y: y2,
                         mode: 'lines',
                         name: 'Y Data'
-                    }]);
+                    }], {
+                        title: 'Y Sensor',
+                        font: {
+                                size: 24,
+                                family: 'Times New Roman',
+                                color: 'red'
+                            }
+                    });
 
                     // Update graph 3
                     Plotly.react('graph3', [{
@@ -46,7 +63,14 @@
                         y: y3,
                         mode: 'lines',
                         name: 'Z Data'
-                    }]);
+                    }], {
+                        title: 'Z Sensor',
+                        font: {
+                                size: 24,
+                                family: 'Times New Roman',
+                                color: 'red'
+                            }
+                    });
 
                     // Update graph 4
                     Plotly.react('graph4', [{
@@ -54,7 +78,14 @@
                         y: y4,
                         mode: 'lines',
                         name: 'Mixed Data'
-                    }]);
+                    }], {
+                        title: 'Mixed Sensor',
+                        font: {
+                                size: 24,
+                                family: 'Times New Roman',
+                                color: 'red'
+                            }
+                    });
                 });
         }
 

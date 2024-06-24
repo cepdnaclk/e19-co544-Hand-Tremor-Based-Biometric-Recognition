@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from sklearn.svm import SVC
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.ensemble import (
     AdaBoostRegressor,
@@ -39,18 +40,13 @@ class ModelTrainer:
                 test_array[:,-1]
             )
             models = {
-                "Random Forest": RandomForestRegressor(),
-                "Decision Tree": DecisionTreeRegressor(),
+                "Random Forest": RandomForestClassifier(),
                 "nb_classifier": GaussianNB(),
                 "KNN": KNeighborsClassifier()
 
             }
             params={
-                "Decision Tree": {
-                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
-                    # 'splitter':['best','random'],
-                    # 'max_features':['sqrt','log2'],
-                },
+            
                 "Random Forest":{
                     'n_estimators': [8,16,32,64,128,256]
                 },
